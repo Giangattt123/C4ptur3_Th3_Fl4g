@@ -1,0 +1,6 @@
+- Ta để ý các phần đầu của dãy số trước dấu { là 16 9 3 15 3 20 6.
+- Nếu ta convert các số này sang bảng chữ cái latin ta sẽ thu 
+  được các chữ cái là P I C O C T F đúng với gợi ý của đề bài 
+  là flag có định dạng là PICOCTF{}.
+-> Vì vậy ta chỉ cần convert các chữ số còn lại trong dấu ngoặc
+  đối chiếu với số thứ tự ta sẽ thu được flag.

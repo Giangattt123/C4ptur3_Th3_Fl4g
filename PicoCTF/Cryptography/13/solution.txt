@@ -1,0 +1,2 @@
+Đây là sự khởi đầu mới mẻ về crypto, vậy bạn có biết về ROT13
+Sử dụng tool https://rot13.com/ để decode ta lấy được flag
