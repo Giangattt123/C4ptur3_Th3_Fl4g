@@ -1,0 +1,12 @@
+- Đề bài cho ta một flag trông có vẻ là flag nhưng khi ta submit lên thì
+  rất tiếc đó không phải một flag chính xác.
+- Ta đọc gợi ý có dẫn đến tutorial về caesar cipher:
+  https://privacycanada.net/classical-encryption/caesar-cipher/
+- Tóm tắt lại mật mã Caesar, còn được gọi là mật mã dịch chuyển, 
+  là một trong những hình thức mã hóa lâu đời nhất và đơn giản nhất.
+  + Nó là một loại mật mã thay thế trong đó mỗi chữ cái trong tin nhắn gốc(trong mật mã được gọi là bản rõ)được thay thế bằng một chữ cái tương ứng với một số chữ cái nhất định được dịch chuyển lên hoặc xuống trong bảng chữ cái.
+  + Đối với mỗi chữ cái của bảng chữ cái, bạn sẽ lấy vị trí của nó trong bảng chữ cái, chẳng hạn như 3 cho chữ 'C' và dịch chuyển nó theo một keynumber. 
+    Nếu chúng ta có khóa +3, chữ 'C' đó sẽ được chuyển xuống chữ 'F' và quy trình tương tự đó sẽ được áp dụng cho mọi chữ cái trong bản rõ.
+  + Theo cách này, một thông điệp ban đầu khá dễ đọc, kết thúc ở dạng không thể hiểu được nếu chỉ nhìn thoáng qua.
+- Vì vậy ta cần tìm khoảng dịch chuyển các chữ cái hợp lí để biến thông điệp "ynkooejcpdanqxeykjrbdofgkq" thành một thông điệp có nghĩa. 
+- Sau một hồi mò mẫn thì key_number = 4
