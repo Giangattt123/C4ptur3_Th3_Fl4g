@@ -1,0 +1,11 @@
+# Solution
+
+Truy cập vào đường dẫn "https://nicc-nicc-98.chals.io/nicc98.html" sẽ hiển thị cho ta một trang web
+![image1](https://live.staticflickr.com/65535/52748620362_85c8d18f5e_c.jpg)
+Tiến hành view source page(Ctrl + U) để xem mã nguồn trang web
+![image2](https://live.staticflickr.com/65535/52749658563_871894a6ba.jpg)
+Ta thấy có file js ở trong **src="js/nicc98.js"** , truy cập vào file js:
+![image3](https://live.staticflickr.com/65535/52749580475_6f57d4fc59_c.jpg)
+Ở dòng đầu tiên là **"console.log("bmljY3tmbGlwX3RoM19zY3JpcHR9");"** nghi ngờ đây là dạng văn bản được mã hóa base64, ta thử tiến hành giải mã và lấy được flag
+![image4](https://live.staticflickr.com/65535/52749424769_017d120636_z.jpg)
+Flag : **nicc{flip_th3_script}**
