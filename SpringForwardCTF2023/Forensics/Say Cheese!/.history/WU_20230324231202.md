@@ -1,0 +1,11 @@
+# Solution
+
+Challenge cung cấp cho chúng ta một bức ảnh tự sướng của một người đàn ông. Hmm đơn giản nhất ở đây tôi sẽ tìm kiếm trong file hiển thị ở hex và tìm kiếm dạng ascii có thể đọc được xem có nội dung như là **nicc{...}** hay không. Nhưng rất tiếc dường như ta không tìm kiếm được gì trông giống như vậy
+
+![image1](https://live.staticflickr.com/65535/52768695940_d7c863dbab.jpg)
+
+Tiếp tục thử trích xuất thông tin về file này bằng **exiftool** tool ,k đây là tool đã được tích hợp sẵn trên kali.
+
+> Gợi ý của đề bài có nói về loại thiết bị được sử dụng để chụp tấm ảnh và model của nó.
+
+> => Flag: **nicc{Security_Camera_Kmart_Special}**
