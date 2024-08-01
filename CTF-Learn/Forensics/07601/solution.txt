@@ -1,0 +1,9 @@
+- Tôi dùng lệnh cơ bản strings để phân tích hình ảnh và lọc ra các chuỗi có chứa kí tự {
++ strings AGT.png| grep {
++ tôi tìm được 1 flag là ABCTF{fooled_ya_dustin} nhưng nó có vẻ không đúng
+- Tôi nghĩ đến việc khám phá các thư mục ẩn bằng lệnh binwalk:
++ binwalk -e AGT.png
++ tôi nhận được một thư mục mới có tên là "_AGT.png.extracted"
+- Khám phá thư mục tôi nhìn thấy 1 bức ảnh khác có tên I Warned You.jpeg, tiếp tục dùng strings
+và lần này flag đúng đã hiện ra:
++ flag: ABCTF{Du$t1nS_D0jo}1r

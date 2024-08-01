@@ -1,0 +1,8 @@
+binwalk --extract --dd=".*." Only_Few_Steps.jpg
+grep -a -oE '[A-Za-z0-9+/]{10,}={0,2}' <find-it>.png | base64 -d
+grep -a -oE '[A-Za-z0-9+/]{10,}={0,2}' YouWon(Almost).jpg | base64 -d
+VkZSR1QxTlVRazlWTVRsQ1ZXdFdabEY2UVhkVVFUMDk=
+VFRGT1NUQk9VMTlCVWtWZlF6QXdUQT09
+TTFOSTBOU19BUkVfQzAwTA==
+M1NI0NS_ARE_C00L
+=> Flag: CTF{M1NI0NS_ARE_C00L}

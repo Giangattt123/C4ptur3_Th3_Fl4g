@@ -1,0 +1,6 @@
+foremost là một công cụ phục hồi dữ liệu và phân tích pháp y kỹ thuật số,
+được thiết kế để khôi phục các tệp bị xóa hoặc bị ẩn trong các thiết bị lưu trữ.
+- foremost -i oreo.jpg
+- extract rar -> strings file b.jpg
+
+- Flag: flag{eat_more_oreos}

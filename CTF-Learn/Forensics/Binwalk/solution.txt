@@ -1,0 +1,16 @@
+- Nghe tên bài cũng đoán được bài này sử dụng tool "Binwalk" bằng lệnh binwalk PurpleThing.jpeg
+└─$ binwalk PurpleThing.jpeg
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 780 x 720, 8-bit/color RGBA, non-interlaced
+41            0x29            Zlib compressed data, best compression
+153493        0x25795         PNG image, 802 x 118, 8-bit/color RGBA, non-interlaced
+
+- Tôi để ý thấy có định dạng ảnh PNG được ẩn ở trong, lần này tôi dùng lệnh binwalk với
+tham số -D để trích xuất dữ liệu với nhận dạng cho trước
++ binwalk -D 'image:png' PurpleThing.jpeg
++ tôi nhận được 1 thư mục có tên là "_PurpleThing.jpeg.extracted", trong đó có 1 file "25795.png"
+chứa flag cần tìm
+- Flag: ABCTF{b1nw4lk_is_us3ful}
+

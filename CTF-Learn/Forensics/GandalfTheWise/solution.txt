@@ -1,0 +1,11 @@
+- strings Gandalj.jpg ta được 3 chuỗi base64
+Q1RGbGVhcm57eG9yX2lzX3lvdXJfZnJpZW5kfQo=
+xD6kfO2UrE5SnLQ6WgESK4kvD/Y/rDJPXNU45k/p
+h2riEIj13iAp29VUPmB+TadtZppdw3AuO7JRiDyU
+- decode chuỗi đầu tiên được 1 chuỗi khá giống format flag như sau:
+CTFlearn{xor_is_your_friend}
+- nhưng tôi nghĩ không bao giờ để bài lại dễ đến thế và 2 chuỗi base64 còn lại k dùng đến
+- tôi nhìn thấy flag giả kia có nói đến xor
+=> xor 2 chuỗi base64
+- tôi viết 1 file script.py
+- Flag: CTFlearn{Gandalf.BilboBaggins}

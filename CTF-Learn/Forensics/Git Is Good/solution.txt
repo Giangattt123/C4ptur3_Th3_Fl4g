@@ -1,0 +1,73 @@
+- Đề bài nói về việc xóa file flag cũ và thay bằng flag mới tôi nghĩ ngay đến việc
+tác giá muốn nói đến việc commit trên git, và câu lệnh ghi lại các log, commit là
+git log -p
+- Câu lệnh ls -a rất hữu ích do foler .git sẽ bị ẩn đi
+- Di chuyển đến folder .git và làm như sau:
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Git Is Good /gitIsGood]
+└─$ ls -a
+.  ..  flag.txt  .git
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Git Is Good /gitIsGood]
+└─$ file flag.txt
+flag.txt: ASCII text
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Git Is Good /gitIsGood]
+└─$ cat .git
+cat: .git: Is a directory
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Git Is Good /gitIsGood]
+└─$ cd .git
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Git Is Good /gitIsGood/.git]
+└─$ ls
+branches        config       HEAD   index  logs     refs
+COMMIT_EDITMSG  description  hooks  info   objects
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Git Is Good /gitIsGood/.git]
+└─$ git log
+commit d10f77c4e766705ab36c7f31dc47b0c5056666bb (HEAD -> master)
+Author: LaScalaLuke <lascala.luke@gmail.com>
+Date:   Sun Oct 30 14:33:18 2016 -0400
+
+    Edited files
+
+commit 195dd65b9f5130d5f8a435c5995159d4d760741b
+Author: LaScalaLuke <lascala.luke@gmail.com>
+Date:   Sun Oct 30 14:32:44 2016 -0400
+
+    Edited files
+
+commit 6e824db5ef3b0fa2eb2350f63a9f0fdd9cc7b0bf
+Author: LaScalaLuke <lascala.luke@gmail.com>
+Date:   Sun Oct 30 14:32:11 2016 -0400
+
+    edited files
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Git Is Good /gitIsGood/.git]
+└─$ git log -p
+commit d10f77c4e766705ab36c7f31dc47b0c5056666bb (HEAD -> master)
+Author: LaScalaLuke <lascala.luke@gmail.com>
+Date:   Sun Oct 30 14:33:18 2016 -0400
+
+    Edited files
+
+diff --git a/flag.txt b/flag.txt
+index 8684e68..c5250d0 100644
+--- a/flag.txt
++++ b/flag.txt
+@@ -1 +1 @@
+-flag{protect_your_git}
++flag{REDACTED}
+
+commit 195dd65b9f5130d5f8a435c5995159d4d760741b
+Author: LaScalaLuke <lascala.luke@gmail.com>
+Date:   Sun Oct 30 14:32:44 2016 -0400
+
+    Edited files
+
+diff --git a/flag.txt b/flag.txt
+index c5250d0..8684e68 100644
+--- a/flag.txt
+:
+
+- Flag: flag{protect_your_git}
