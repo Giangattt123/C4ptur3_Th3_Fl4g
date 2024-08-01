@@ -1,0 +1,2 @@
+cyphertex -> base64 decode -> hex to string -> binary to string -> base 64 decode
+Flag: CTF{I_AM_PROUD_OF_YOU}

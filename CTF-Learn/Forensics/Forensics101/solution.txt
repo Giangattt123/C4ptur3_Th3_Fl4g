@@ -1,0 +1,11 @@
+- Bài này sử dụng strings và tìm kiếm sự có mặt của "{"
+└─$ strings 95f6edfb66ef42d774a5a34581f19052.jpg| grep "{"
+L{2^
+[P{!
+{~T{@
+we|C{
+v{*{8
+flag{wow!_data_is_cool}
+AG{u
+
+Flag: flag{wow!_data_is_cool}

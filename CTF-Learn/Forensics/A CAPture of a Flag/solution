@@ -1,0 +1,6 @@
+- Đề bài cho 1 file flag(4) với định dạng file picap => wiresharl tool
+- Tôi đã cố kiểm tra luồng TCP để tìm một số manh mối và sau đó tôi thử kiểm tra
+luồng UDP để tìm một số manh mối. Cuối cùng, tôi sử dụng bộ lọc để chỉ nhận các yêu cầu HTTP.
+- Sau đó tôi thấy request HTTP với GET method đến /?msg=ZmxhZ3tBRmxhZ0luUENBUH0= HTTP/1.1\r\n
+- Nghi ngờ value sau param là chuỗi được mã hóa base64, tôi tiến hành decode
+- Flag: flag{AFlagInPCAP}

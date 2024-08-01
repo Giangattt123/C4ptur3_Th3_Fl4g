@@ -1,0 +1,38 @@
+- Đề bài gợi ý sử dụng tool Steghide, những trước hết tôi dùng exiftool để xem chi tiết về
+file Milion này:
+─$ exiftool Minions1.jpeg
+ExifTool Version Number         : 12.65
+File Name                       : Minions1.jpeg
+Directory                       : .
+File Size                       : 6.5 kB
+File Modification Date/Time     : 2024:07:31 11:41:24-04:00
+File Access Date/Time           : 2024:07:31 11:41:30-04:00
+File Inode Change Date/Time     : 2024:07:31 11:41:30-04:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Current IPTC Digest             : b9e8892a1b55650cf0a6341fe676d194
+Keywords                        : myadmin
+Application Record Version      : 4
+Image Width                     : 225
+Image Height                    : 225
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 225x225
+Megapixels                      : 0.051
+
+- Tôi để ý thấy có chỗ myadmin có vẻ sau này sẽ sử dụng nên tôi sẽ lưu lại
+- Tiếp theo tôi sử dụng tool steghide để Để trích xuất dữ liệu đã được giấu trong tệp chứa
+với câu lệnh như sau: $ steghide --extract -sf Minions1.jpeg
+- Nhập passphrase là myadmin và nhận được file raw.txt
+
+- Mở file raw.txt nhận được một đoạn mã base64 , tiến hành decode với câu lệnh như sau:
+cat raw.txt | base64 -d => CTFlearn{this_is_fun}
+- Flag: CTFlearn{this_is_fun}

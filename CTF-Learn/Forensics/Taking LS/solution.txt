@@ -1,0 +1,50 @@
+- Đề bài nói rất rõ gợi ý ở đây câu lệnh "ls" sẽ là câu lệnh hữu ích nhất
+để giải chall này
+- Tiến hành giải nén và thu được folder The Flag và có 1 file The Flag.pdf
+nhưng ta không đọc được nội dung do nó cần yêu cầu 1 password bảo vệ file
+- Ta tìm password như sau:
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF_Basic/CTF-Learn/Forensics/Taking-LS]
+└─$ cd The\ Flag
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Taking-LS/The Flag]
+└─$ ls
+ __MACOSX  'The Flag'
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF-Learn/Forensics/Taking-LS/The Flag]
+└─$ cd The\ Flag
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ ls
+'The Flag.pdf'
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ file The\ Flag.pdf
+The Flag.pdf: PDF document, version 1.4, 1 pages
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ ls
+'The Flag.pdf'
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ ls -a
+ .   ..   .DS_Store  'The Flag.pdf'   .ThePassword
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ cat .ThePassword
+cat: .ThePassword: Is a directory
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Forensics/Taking-LS/The Flag/The Flag]
+└─$ cd .ThePassword
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Taking-LS/The Flag/The Flag/.ThePassword]
+└─$ ls
+ThePassword.txt
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/Taking-LS/The Flag/The Flag/.ThePassword]
+└─$ cat ThePassword.txt
+Nice Job!  The Password is "Im The Flag".
+
+- Vậy password bảo vệ file pdf kia là "Im The Flag"
+- Nhập password vào và xem được flag
+
+Flag: ABCTF{T3Rm1n4l_is_C00l}

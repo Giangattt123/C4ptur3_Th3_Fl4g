@@ -1,0 +1,11 @@
+- Ở đây nếu lướt nhanh với các tool như exiftool, binwalk , foremost sẽ đều không thu được gì
+- Tôi để ý kỹ câu lệnh strings Pho.jpg và thu được output như sau:
+oSamsung
+Samsung Galaxy S8 Color Palette:
+)$,$!$,$A3--3AK?<?K[QQ[rlr
+)$,$!$,$A3--3AK?<?K[QQ[rlr
+- Tôi cũng thử decode 1 hồi nhưng k có gì khá hơn:))
+- Tôi nghĩ đến việc phân tích sâu hơn file ảnh này với tool:
+https://www.onlinehexeditor.com/, các bạn có thể download HxD cũng oki
+- Và tôi đã thấy flag(img.png)
+- Flag: CTFLean{I_Love_Pho!!!}

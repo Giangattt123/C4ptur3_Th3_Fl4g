@@ -1,0 +1,36 @@
+- Ở đây đề bài đề cập đến flag bị nằm ngoài bức ảnh => resize hex
+- Kiểm tra kích thước bức ảnh bằng lệnh exiftool
+─$ exiftool abondoned_street_challenge2.jpg
+ExifTool Version Number         : 12.65
+File Name                       : abondoned_street_challenge2.jpg
+Directory                       : .
+File Size                       : 1009 kB
+File Modification Date/Time     : 2024:07:31 13:05:49-04:00
+File Access Date/Time           : 2024:07:31 13:06:08-04:00
+File Inode Change Date/Time     : 2024:07:31 13:06:08-04:00
+File Permissions                : -rw-r--r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : inches
+X Resolution                    : 314
+Y Resolution                    : 314
+Image Width                     : 2016
+Image Height                    : 900
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:4:4 (1 1)
+Image Size                      : 2016x900
+Megapixels                      : 1.8
+
+- có thể thấy chiều rộng bức ảnh là 2016, chiều cao là 900
+- mình dự đoán ở đây nên thay đổi chiều cao do chiều rộng đã khá lớn
+- convert 900 -> hex bằng lệnh hex(900) -> Ox384
+- ảnh img.png có thể thấy vị trí chiều cao của bức ảnh 03 84 , tôi quyết định cho kích thước
+chiều rộng bằng chiều cao luôn vì vậy tôi sẽ sửa 03 84 thành 07 E0
+- trên linux tôi dùng tool hexeditor để sửa(edit-size-height.png)
+- lưu thay đổi và thấy flag nằm trên phần mở rộng: urban_exploration
+
+- Hiểu rõ hơn xem bài viết: https://blog.cyberhacktics.com/hiding-information-by-changing-an-images-height/
