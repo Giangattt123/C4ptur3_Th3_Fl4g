@@ -1,6 +1,6 @@
 Thử thách như sau:
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20HTTP%20Method/images/1.png?raw=true)
 
 Đầu tiên mình sẽ view source code(Ctrl + U) và thấy một path `/src`
 
@@ -24,7 +24,7 @@ Thử thách như sau:
 
 Truy cập vào `/src` sẽ tự động download file `run.py`
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20HTTP%20Method/images/2.png?raw=true)
 
 ```
 #!/usr/bin/python3
@@ -54,7 +54,7 @@ app.run(host='0.0.0.0', port=1337)
 
 Ở cuối file có một path khác là `/super-secret-route-nobody-will-guess` với `PUT method`. Dùng burpsuite để custom header request và nhận được flag
 
-![img3]()
+![img3](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20HTTP%20Method/images/3.png?raw=true)
 
 Hoặc có thể sử dụng command `curl` như sau:
 

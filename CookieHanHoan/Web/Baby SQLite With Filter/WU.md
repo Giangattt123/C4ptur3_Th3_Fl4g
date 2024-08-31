@@ -2,7 +2,7 @@ Tham khảo writeups ở: [Baby SQLite With Filter](https://hackmd.io/@D4rUL1eb3
 
 > payload: uid=&upw=&level=0/**/union/**/values(char(97)||char(100)||char(109)||char(105)||char(110))
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20SQLite%20With%20Filter/images/2.png?raw=true)
 
 Hoặc với curl command:
 

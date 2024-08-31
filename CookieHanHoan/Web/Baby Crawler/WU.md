@@ -12,10 +12,8 @@ $result = shell_exec('curl '. escapeshellcmd($url));
 
 > Sử dụng `curl` gửi file crawl được đến một `webhook` với param `-F`
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20Crawler/images/1.png?raw=true)
 
 Kiểm tra bên `webhook`
 
-![img2]()
-
-> Flag:
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Web/Baby%20Crawler/images/2.png?raw=true)
