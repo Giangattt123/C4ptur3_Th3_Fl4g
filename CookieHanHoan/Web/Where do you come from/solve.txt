@@ -1,0 +1,23 @@
+- Đề bài có nói đến "Where do you come from" -> add header "Refere" với value là "Cookiearena"
+- Có thể dùng burpsuite hoặc curl command
+- Request:
+GET / HTTP/1.1
+Host: 103.97.125.56:32074
+Upgrade-Insecure-Requests: 1
+Referer: Cookiearena
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.5938.63 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.9
+Connection: close
+- Reponse:
+HTTP/1.1 200 OK
+Server: Werkzeug/2.2.3 Python/3.7.17
+Date: Mon, 05 Aug 2024 01:37:02 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 64
+Connection: close
+
+CHH{Ar3_Y0u_Unders7and_Ref3rer_20a1b4551b02d74a66ac99f67b73d479}
+
+=> Flag: CHH{Ar3_Y0u_Unders7and_Ref3rer_20a1b4551b02d74a66ac99f67b73d479}

