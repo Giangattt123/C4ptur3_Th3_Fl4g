@@ -1,0 +1,13 @@
+- Mô tả của thử thách:
+
+I found a piece of paper on the desk of a friend who is passionate about playing the violin. I have illustrated it in the image below. Can you help me solve it?
+
+- Từ mô tả trên có thể thấy tác giả đang muốn nói đến mã hóa "Dancing Man Code" được nhắc đến trong bộ truyện trinh thám "Sherlock Holmes"
+
+- Sử dụng tool online "https://www.dcode.fr/dancing-men-cipher" để decode
+
+- Decode ra được đoạn chuỗi "NDUXXUMZFPQFQOFUHQ", tôi đã cảm thấy nó khá vô nghĩa rồi nhưng cứ thử EHC{NDUXXUMZFPQFQOFUHQ}" và đúng thật flag này không đúng
+
+- Tôi nghĩ ngay đến ROT, sau 1 hồi thử thì tôi biết nó là ROT14 bởi đoạn chuỗi dịch ra nó khá có nghĩa "BRILLIANTDETECTIVE"
+
+- Flag đúng: EHC{BRILLIANTDETECTIVE}
