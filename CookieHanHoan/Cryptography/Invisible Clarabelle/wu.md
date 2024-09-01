@@ -509,7 +509,7 @@ MoOMoOMoomOo
 
 - Có thể thấy nó toàn ra chữ o và m lúc thì in hoa lúc lại in thường, đến đây tôi bắt đầu bí ý tưởng, tôi nghĩ đến còn cái tên `chall` mình chưa tìm hiểu, sau một hồi thì tôi biết `Invisible` hiểu là không thấy, còn `Clarabelle` thì là `Bò Clarabelle`
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Cryptography/Invisible%20Clarabelle/images/image-1.png?raw=true)
 
 > Vì vậy khả năng thử thách này sử dụng hai ngôn ngữ là `Cow Language` và `White Space language`
 
@@ -579,6 +579,6 @@ Done.
 
 - Nó ra một đoạn chuỗi tưởng như không có gì đó là tính `Invisible`, bôi đen là có thể thấy, tiếp theo tôi sử dụng [decode white space language](https://www.dcode.fr/whitespace-language) để tìm ra `flag`
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Cryptography/Invisible%20Clarabelle/images/image-2.png?raw=true)
 
 > Flag: EHC{c0w_l4ngu4g3_is_s0_fun}

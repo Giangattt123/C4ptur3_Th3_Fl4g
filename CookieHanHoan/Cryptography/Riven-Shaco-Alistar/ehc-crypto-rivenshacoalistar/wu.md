@@ -113,7 +113,7 @@ def get_flag(message):
 
 - Tôi `netcat` đến server và được cho 2 con số `c(bản mã)` và `d(khóa riêng tư)` , tôi viết đoạn code sau để tìm được `message` đúng và nhận lại được `hex_value` từ server
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Cryptography/Riven-Shaco-Alistar/ehc-crypto-rivenshacoalistar/player/images/image-01.png?raw=true)
 
 ```
 from pwn import remote
@@ -143,13 +143,13 @@ for p, q in combinations(size_primes, 2):
         continue
 ```
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Cryptography/Riven-Shaco-Alistar/ehc-crypto-rivenshacoalistar/player/images/image-02.png?raw=true)
 
 > Message: 2BllPbQqohYpATyI
 
 - Ghi giá trị này vào và nhận được chuỗi `hex` từ server
 
-![img3]()
+![img3](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/CookieHanHoan/Cryptography/Riven-Shaco-Alistar/ehc-crypto-rivenshacoalistar/player/images/image-03.png?raw=true)
 
 - Sau đó tôi viết script để tìm được 4 kí tự đầu của flag
 
