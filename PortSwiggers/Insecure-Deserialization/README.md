@@ -1,6 +1,6 @@
 # Insecure deserialization
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-01.png?raw=true)
 
 ## What is serialization?
 
@@ -16,7 +16,7 @@
 
 - Giải tuần tự hóa là quá trình khôi phục luồng byte này thành bản sao đầy đủ chức năng của đối tượng gốc, ở trạng thái chính xác như khi nó được tuần tự hóa. Logic của trang web sau đó có thể tương tác với đối tượng giải tuần tự hóa này, giống như với bất kỳ đối tượng nào khác.
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-02.png?raw=true)
 
 - Nhiều ngôn ngữ lập trình cung cấp hỗ trợ gốc cho tuần tự hóa. Chính xác cách tuần tự hóa đối tượng phụ thuộc vào ngôn ngữ. Một số ngôn ngữ tuần tự hóa đối tượng thành định dạng nhị phân, trong khi những ngôn ngữ khác sử dụng các định dạng chuỗi khác nhau, với các mức độ dễ đọc khác nhau của con người. Lưu ý rằng tất cả các thuộc tính của đối tượng gốc được lưu trữ trong luồng dữ liệu tuần tự hóa, bao gồm bất kỳ trường `private` nào. Để ngăn một trường được tuần tự hóa, trường đó phải được đánh dấu rõ ràng là `transient` trong khai báo lớp.
 
@@ -66,7 +66,7 @@ echo "Serialized User: " . $serializedUser;
 
 - Sau khi `serialize` chúng ta nhận được một chuỗi như sau: `O:4:"User":2:{s:4:"name";s:6:"Carlos";s:10:"isLoggedIn";b:1;}`
 
-  ![img3]()
+  ![img3](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-03.png?raw=true)
 
 - Ở đây chúng ta có thể hiểu cái chuỗi trên như sau:
 
@@ -118,7 +118,7 @@ Mã tấn công này sẽ khởi tạo một đối tượng `User` dựa trên 
 
 Đọc mô tả của lab
 
-![img4]()
+![img4](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-04.png?raw=true)
 
 Vậy bây giờ để solve được bài lab này chúng ta cần làm hai việc đó là leo thang đặc quyền lấy quyền quản trị và xóa người dùng `carlos`
 
@@ -126,7 +126,7 @@ Vậy bây giờ để solve được bài lab này chúng ta cần làm hai vi�
 
 Tôi sẽ dùng luôn `burpsuite` để tiện cho việc chỉnh sửa các http header(nếu phải sửa)
 
-![img05]()
+![img05](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-05.png?raw=true)
 
 Ta có thể thấy chuỗi đã cookie thực chất là một chuỗi base64 được mã hóa để ẩn đi dấu `=` bằng `%3d`
 
@@ -142,7 +142,7 @@ O:4:"User":2:{s:8:"username";s:6:"wiener";s:5:"admin";b:0;}
 
 Đơn giản hơn bạn có thể nhìn ngay sang mục `Inspector` có thể thấy tất cả điều đó
 
-![img6]()
+![img6](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-06.png?raw=true)
 
 - Đây chính là quá trình serialize một đối tượng user và sử dụng cơ chế phiên dựa trên tuần tự hóa -> leo thang đặc quyền
 
@@ -150,7 +150,7 @@ O:4:"User":2:{s:8:"username";s:6:"wiener";s:5:"admin";b:0;}
 
 - Tôi sẽ sửa trực tiếp ở phần `Inspector`
 
-  ![img7]()
+  ![img7](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-07.png?raw=true)
 
   ```
   Tzo0OiJVc2VyIjoyOntzOjg6InVzZXJuYW1lIjtzOjY6IndpZW5lciI7czo1OiJhZG1pbiI7YjoxO30%3d
@@ -160,13 +160,13 @@ O:4:"User":2:{s:8:"username";s:6:"wiener";s:5:"admin";b:0;}
 
 - Lúc này một tab mới xuất hiện `admin panel` chỉ dành cho người admin -> leo thang thành công
 
-  ![img8]()
+  ![img8](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-08.png?raw=true)
 
 - Cuối cùng xóa người dùng `carlos` để hoàn thành lab
 
-  ![img9]()
+  ![img9](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-9.png?raw=true)
 
-  ![img10]()
+  ![img10](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/Insecure-Deserialization/images/image-10.png?raw=true)
 
 ## Modifying data types
 
