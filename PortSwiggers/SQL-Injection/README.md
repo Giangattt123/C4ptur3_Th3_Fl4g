@@ -6,7 +6,7 @@
 
 - [sqlinjection-cheat sheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 
-  ![img1]()
+  ![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-1.png?raw=true)
 
 ## What is the impact of a successful SQL injection attack?
 
@@ -182,7 +182,7 @@ Xác định csdl đang tồn tại những bảng nào và chúng chứa nhữn
 SELECT * FROM information_schema.tables;
 ```
 
-![img3]()
+![img3](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-3.png?raw=true)
 
 ## Blind SQL injection vulnerabilities
 
@@ -252,13 +252,13 @@ Mục tiêu của bài lab là lấy được `password` của `administrator`, 
 
 Truy cập vào tab `Home` sẽ thấy dòng chữ `Welcom back`, kiểm tra `cookie` có trên trang web ta thấy có trường `TrackingId`, ứng dụng xử lí giá trị này để kiểm tra xem đây có phải một người dùng đã được track rồi hay không
 
-![img4]()
+![img4](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-4.png?raw=true)
 
 Ở đây đề bài đã cung cấp là trường `TrackingId` dễ bị tấn công, trong trường hợp không biết chúng ta có thể `fuzzing` cả param `session` nhé
 
 Mở burpsuite để dễ dàng phân tích và khai thác hơn
 
-![img5]()
+![img5](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-5.png?raw=true)
 
 Bây giờ chúng ta sẽ thử xem liệu param `TrackingId` có phải là một `param` dễ bị các cuộc tấn công hay không bằng cách thử sai và thử đúng để xem cách mà server sẽ phản hồi lại
 
@@ -266,20 +266,20 @@ Bây giờ chúng ta sẽ thử xem liệu param `TrackingId` có phải là m�
 
 - Đối với giá trị không tồn tại chắc chắn server sẽ phản hồi khác, bằng chứng là khi tôi điền thêm 1 vài kí tự lạ khác vào giá trị ban đầu và tiến hành gửi request ở response không còn hiện message `Welcome back` nữa
 
-  ![img6]()
+  ![img6](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-6.png?raw=true)
 
 - Tôi tiếp tục thử nghiệm nếu kết hợp toán tử `and` đi kèm với một biểu thức luôn đúng
 
-  ![img7]()
+  ![img7](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-7.png?raw=true)
 
-  ![img8]()
+  ![img8](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-8.png?raw=true)
 
 - Tiếp theo chúng ta sẽ kiểm tra sự tồn tại của bảng `users` bằng câu lệnh đi kèm `(select 'x' from users LIMIT 1) = 'x'`
 
   - Nếu bảng `users` có ít nhất một dòng , truy vấn con sẽ trả về 'x', và điều kiện so sánh = 'x' sẽ là đúng.
   - Nếu bảng `users` trống (không có dòng nào), truy vấn con sẽ không trả về giá trị nào, và do đó điều kiện sẽ không được thỏa mãn, trả về false.
 
-  ![img9]()
+  ![img9](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-9.png?raw=true)
 
   => có sự tồn tại của bảng `users`
 
@@ -289,7 +289,7 @@ Bây giờ chúng ta sẽ thử xem liệu param `TrackingId` có phải là m�
   sgEetNS5vVXUQTP6' and (select username from users where username='administrator')='administrator'--
   ```
 
-  ![img10]()
+  ![img10](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-10.png?raw=true)
 
   => có sự tồn tại của user `administrator`
 
@@ -301,17 +301,17 @@ Bây giờ sau khi biết chắc chắn param `TrackingId` là param dễ bị t
   Qi2EGJmKAvvASkFp' and (select username from users where username='administrator' and length(password)>1)='administrator'--
   ```
 
-  ![img11]()
+  ![img11](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-11.png?raw=true)
 
   => `password` của admin lớn hơn một kí tự
 
 - Nhưng nếu thử như vậy hẳn sẽ rất lâu tôi sẽ sử dụng `burp intruder`
 
-  ![img12]()
+  ![img12](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-12.png?raw=true)
 
-  ![img13]()
+  ![img13](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-13.png?raw=true)
 
-  ![img14]()
+  ![img14](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-14.png?raw=true)
 
   => `password` có độ dài 20 kí tự
 
@@ -323,25 +323,25 @@ Bây giờ sau khi biết chắc chắn param `TrackingId` là param dễ bị t
 
   - Nếu chỉ làm như này chúng ta sẽ phải brutefore 20 vị trí của password, như trong hình kí tự đầu tiên của `password` là chữ `i`
 
-    ![img15]()
+    ![img15](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-15.png?raw=true)
 
   - Vì vậy tôi sẽ sử dụng `cluster bomb attack`
 
-    ![img16]()
+    ![img16](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-16.png?raw=true)
 
   - Filter với dòng `welcome` sẽ thấy được kí tự đúng ứng với từng vị trí
 
-    ![img17]()
+    ![img17](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-17.png?raw=true)
 
   > `password`: `idqfj2ag1nd4hphkjqlu`
 
 Cuối cùng nhập `username` là `administrator` và `password` ở trên để `solve` bài lab
 
-![img18]()
+![img18](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-18.png?raw=true)
 
 Tôi sẽ viết thêm 1 script bằng python để làm việc này như sau: [script](), nó cũng không khác là mấy chúng ta vẫn `bruteforce` được `password`
 
-![img19]()
+![img19](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-19.png?raw=true)
 
 ## SQL injection UNION attacks
 
@@ -408,7 +408,7 @@ Tương tự như `ORDER BY` ứng dụng có thể thực sự trả về lỗi
 
 Trang web hiện ra trông khá giống với một shop có dữ liệu các sản phẩm và ta có thể lấy được các sản phầm thông qua `category`
 
-![img20]()
+![img20](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-20.png?raw=true)
 
 ```
 https://0a33009e03ea1a238065128c0057001b.web-security-academy.net/filter?category=Tech+gifts
@@ -420,11 +420,11 @@ Xác định số cột được truy vấn trả về như sau:
 '+UNION+SELECT+NULL,NULL,NULL--
 ```
 
-![img21]()
+![img21](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-21.png?raw=true)
 
 Tôi sẽ xem nó rõ ràng hơn trong trình duyệt
 
-![img22]()
+![img22](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-22.png?raw=true)
 
 Truy vấn trả về 3 cột
 Bây giờ bài yêu cầu làm cho cơ sở dữ liệu lấy được chuỗi `4KMCMA` tôi sẽ thay nó vào bât kỳ trường `NULL` nào
@@ -484,7 +484,7 @@ Trong ví dụ này, bạn có thể lấy nội dung của bảng `user` bằng
 
 Sau khi kiểm tra bằng câu lệnh `UNION SELECT` tôi biết được kết quả của truy vấn trả về có hai cột
 
-![img23]()
+![img23](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-23.png?raw=true)
 
 Tiếp theo để kiểm tra xem trong database sẽ tồn tại những bảng nào, tôi thực hiện tấn công như sau:
 
@@ -494,7 +494,7 @@ Tiếp theo để kiểm tra xem trong database sẽ tồn tại những bảng 
 
 Và tôi tìm thấy một bảng là bảng `users` đây có thể nơi chứa thông tin người dùng
 
-![img24]()
+![img24](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-24.png?raw=true)
 
 Bây giờ để xem các cột có trong bảng `users` tôi thực hiện tấn công như sau:
 
@@ -502,7 +502,7 @@ Bây giờ để xem các cột có trong bảng `users` tôi thực hiện tấ
 ' UNION SELECT NULL, column_name FROM information_schema.columns WHERE table_name='users'--
 ```
 
-![img25]()
+![img25](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-25.png?raw=true)
 
 Vậy trong table `users` có 3 cột là `email , username , password`. Tôi không quan tâm đến `email` lắm do đăng nhập chỉ cần `username` và `password`, tôi thực hiện tấn công như sau để lấy thông tin bảng `users`
 
@@ -512,4 +512,4 @@ Vậy trong table `users` có 3 cột là `email , username , password`. Tôi kh
 
 Từ đây tôi sẽ lấy được hết danh sách `users` bao gồm cả người quản trị
 
-![img26]()
+![img26](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PortSwiggers/SQL-Injection/images/image-26.png?raw=true)
