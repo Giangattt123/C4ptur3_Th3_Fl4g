@@ -1,0 +1,13 @@
+TK portswigger:
+email: minhandiennuoc123@gmail.com
+pass: Nfga%#77pd?x4}rF/sCd4k4w5:;562rG
+
+link:https://portswigger.net/web-security/all-labs#cross-site-scripting
+
+B21DCAT077
+7YClHJla
+
+
+Tham khảo: https://github.com/giangnamG/NoteBook_For_CTFs/tree/main
+
+https://viblo.asia/p/write-up-24atctf-web-challenges-pgjLNwbEV32
