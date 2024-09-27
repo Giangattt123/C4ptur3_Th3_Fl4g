@@ -1,0 +1,7 @@
+Does the CLI listen to magic?
+
+http://chal.competitivecyber.club:13336
+
+Flag format: CACI{.*}
+
+Author: CACI
