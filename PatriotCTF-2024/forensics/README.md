@@ -59,11 +59,11 @@ Sử dụng `Event Viewer` để mở file `evtx`
 
 Sau đó connect đến server bằng câu lệnh `nc chal.competitivecyber.club 10001` để trả lời các câu hỏi của thử thách
 
-![img6]()
+![img6](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-06.png?raw=true)
 
 Câu hỏi liên quan đến kẻ tấn công đã chạy tập lệnh nào để khai thác câu lệnh -> event id `4104`
 
-![img7]()
+![img7](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-07.png?raw=true)
 
 > Invoke-P0wnedshell.ps1
 
@@ -71,13 +71,13 @@ Câu hỏi thứ hai thì có vẻ như Jack đã sử dụng kỹ thuật proce
 
 > Invoke-UrbanBishop.ps1
 
-![img10]()
+![img10](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-10.png?raw=true)
 
-![img11]()
+![img11](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-11.png?raw=true)
 
 > WinRM
 
-![img12]()
+![img12](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-12.png?raw=true)
 
 > Flag: pctf{3v3nt_l0gs_reve4l_al1_a981eb}
 
@@ -117,7 +117,7 @@ cd "C:\Users\Admin\OneDrive - ptit.edu.vn\Progaming Course\GIT\C4ptur3_Th3_Fl4g\
 dir /R
 ```
 
-![img14]()
+![img14](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-14.png?raw=true)
 
 Chúng ta đã tìm thấy hai `Alternate Data Streams (ADS)` liên quan đến file `budget`:
 
@@ -131,17 +131,17 @@ $output = Get-Content .\budget:streamingjpegjfif -Encoding Byte -ReadCount 0
 Set-Content .\streaming -Encoding Byte -Value $output
 ```
 
-![image15]()
+![image15](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-15.png?raw=true)
 
 Đầu ra sẽ là file `streaming`, với gợi ý là `streamingjpegjfif` ta biết được đây là file `jpeg`, tôi sử dụng `HxD` để chỉnh sửa `header` của file là
 `FF D8 FF E0 00 10 4A 46
 49 46 00 01
 `
 
-![imag16]()
+![imag16](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-16.png?raw=true)
 
 Bây giờ kiểm tra định dạng file và đọc `flag`
 
-![image17]()
+![image17](https://github.com/Giangattt123/C4ptur3_Th3_Fl4g/blob/master/PatriotCTF-2024/forensics/images/image-17.png?raw=true)
 
 > Flag: PCTF{alternate\*d4t4*str3aming*&\_chill}
