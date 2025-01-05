@@ -37,5 +37,3 @@ while True:
 # res = requests.post(url, headers=burp0_headers, data=burp0_data)
 # print(res.text)
 
-
-# https://forum.cookiearena.org/t/web-simple-blind-sql-injection/161
